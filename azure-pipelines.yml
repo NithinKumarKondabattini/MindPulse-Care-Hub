@@ -1,0 +1,18 @@
+trigger:
+  - main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - checkout: self
+
+  - script: |
+      test -f index.html
+      test -f styles.css
+      test -f app.js
+      test -f Dockerfile
+    displayName: Validate site files
+
+  - script: docker build -t mindpulse-site .
+    displayName: Build Docker image

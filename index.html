@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindPulse | Smart Mental Health Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">AI-powered mental health tracking</p>
+        <h1>MindPulse Care Hub</h1>
+      </div>
+      <button id="logoutButton" class="ghost-button hidden" type="button">Logout</button>
+    </header>
+
+    <main class="app-grid">
+      <section class="hero-panel">
+        <div class="hero-copy">
+          <p class="badge">Smartwatch Integration</p>
+          <h2>Instant stress assessment with a dashboard clinicians and users can actually trust.</h2>
+          <p>
+            Monitor stress patterns, review wearable signals, and respond faster with guided AI assistance.
+          </p>
+        </div>
+        <div class="hero-stats">
+          <article>
+            <span>Heart Rate</span>
+            <strong>82 BPM</strong>
+            <small>Live recovery trend stable</small>
+          </article>
+          <article>
+            <span>Stress Index</span>
+            <strong>31 / 100</strong>
+            <small>Low risk over past 24 hours</small>
+          </article>
+          <article>
+            <span>Sleep Balance</span>
+            <strong>7h 48m</strong>
+            <small>Improved vs previous week</small>
+          </article>
+        </div>
+      </section>
+
+      <section id="loginView" class="card auth-card">
+        <div class="card-heading">
+          <p class="eyebrow">Secure access</p>
+          <h3>Login to your care dashboard</h3>
+        </div>
+        <form id="loginForm" class="stack" novalidate>
+          <label>
+            <span>Email</span>
+            <input id="email" name="email" type="email" placeholder="clinician@mindpulse.ai" required>
+          </label>
+          <label>
+            <span>Password</span>
+            <input id="password" name="password" type="password" placeholder="Enter your password" required minlength="6">
+          </label>
+          <button class="primary-button" type="submit">Login</button>
+          <p class="helper-text">Demo access: use any valid email and a password with at least 6 characters.</p>
+          <p id="formMessage" class="form-message" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section id="dashboardView" class="dashboard hidden">
+        <div class="card welcome-card">
+          <div class="card-heading">
+            <p class="eyebrow">Realtime overview</p>
+            <h3 id="welcomeTitle">Welcome back</h3>
+          </div>
+          <p class="muted">
+            Your wearable-linked dashboard summarizes stress, recovery, and recommended interventions for the day.
+          </p>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="card metric-card accent-sand">
+            <span>Current Stress State</span>
+            <strong>Moderate</strong>
+            <p>AI detected elevated strain during morning commute and suggested a 3 minute breathing reset.</p>
+          </article>
+          <article class="card metric-card accent-mint">
+            <span>Sleep Recovery Score</span>
+            <strong>84%</strong>
+            <p>Sleep duration improved, reducing the likelihood of anxiety spikes this afternoon.</p>
+          </article>
+          <article class="card metric-card accent-coral">
+            <span>Last Intervention</span>
+            <strong>Mindful Pause</strong>
+            <p>Delivered through smartwatch at 8:40 AM with positive follow-up biometrics.</p>
+          </article>
+          <article class="card chart-card">
+            <div class="card-heading">
+              <p class="eyebrow">Weekly stress trend</p>
+              <h3>Risk pattern</h3>
+            </div>
+            <div class="bars" aria-label="Weekly stress trend chart">
+              <span style="--size: 38%"></span>
+              <span style="--size: 65%"></span>
+              <span style="--size: 48%"></span>
+              <span style="--size: 72%"></span>
+              <span style="--size: 44%"></span>
+              <span style="--size: 57%"></span>
+              <span style="--size: 29%"></span>
+            </div>
+          </article>
+          <article class="card insights-card">
+            <div class="card-heading">
+              <p class="eyebrow">AI recommendations</p>
+              <h3>Next best actions</h3>
+            </div>
+            <ul>
+              <li>Schedule a low-stimulation break at 2:00 PM.</li>
+              <li>Enable smartwatch haptic prompts for breathing recovery.</li>
+              <li>Review caffeine intake correlation from the last 3 days.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
